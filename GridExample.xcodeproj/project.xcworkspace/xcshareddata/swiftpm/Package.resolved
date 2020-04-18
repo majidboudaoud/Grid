@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ColumnLayout",
+        "repositoryURL": "https://github.com/majidboudaoud/ColumnLayout.git",
+        "state": {
+          "branch": null,
+          "revision": "f334a1eafa904d12069d606618615395e48b8124",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

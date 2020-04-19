@@ -97,6 +97,12 @@ public class LBCGridView: UICollectionView {
         return self
     }
     
+    @inlinable
+    @discardableResult
+    public func testInlinable(_ didSelectItemAtIndexPath: @escaping(UICollectionView, IndexPath) -> Void) -> Self {
+        return self
+    }
+    
     @discardableResult
     public func didSelectItemAtIndexPath(_ didSelectItemAtIndexPath: @escaping(UICollectionView, IndexPath) -> Void) -> Self {
         _delegate.didSelectItemAtIndexPath = didSelectItemAtIndexPath

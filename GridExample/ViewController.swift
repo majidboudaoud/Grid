@@ -11,15 +11,18 @@ import Grid
 
 class ViewController: UIViewController {
 
-        private let gridView = LBCGridView().numberOfItemsInSection { _ in 10 }
+    private let gridView = LBCGridView().numberOfItemsInSection { _ in 10 }
                                         .setNumberOfSections(1)
                                         .setInsetForSectionAtIndex { _ in .init(top: 8, left: 8, bottom: 8, right: 8) }
-                                        .registerCells(UICollectionViewCell.self)
+                                        .registerCells([UICollectionViewCell.self])
                                         .setNumberOfColumnsFor { _ in return 4 }
                                         .cellForItemAtIndexPath { (collectionView, indexPath) -> UICollectionViewCell in
                                             let cell = collectionView.dequeueReusableCell(with: UICollectionViewCell.self, for: indexPath)
                                             cell.backgroundColor = .red
                                             return cell
+                                        }
+                                        .didSelectItemAtIndexPath { (collectionView, indexPath) in
+                                            print("did select item at indexPath: \(indexPath.item)")
                                         }
     override func viewDidLoad() {
         super.viewDidLoad()

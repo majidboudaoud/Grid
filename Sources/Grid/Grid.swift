@@ -4,7 +4,7 @@ import ColumnLayout
 public class LBCGridView: UICollectionView {
     
     private let _dataSource: LBCGridViewDataSource = LBCGridViewDataSource()
-    
+    private let _delegate: LBCGridViewDelegate = LBCGridViewDelegate()
     private let columnLayoutDelegate: LBCGridViewColumnLayoutDelegate = LBCGridViewColumnLayoutDelegate()
     
     private let columnLayout: ColumnLayout = {
@@ -24,15 +24,21 @@ public class LBCGridView: UICollectionView {
         super.init(frame: frame, collectionViewLayout: self.columnLayout)
         self.columnLayout.delegate = columnLayoutDelegate
         self.dataSource = _dataSource
+        self.delegate = _delegate
         self.alwaysBounceVertical = true
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        self.collectionViewLayout = self.columnLayout
+        self.columnLayout.delegate = self.columnLayoutDelegate
+        self.dataSource = _dataSource
+        self.delegate = _delegate
+        self.alwaysBounceVertical = true
     }
     
     @discardableResult
-    public func setInsetForSectionAtIndex(_ insetForSectionAtIndex: @escaping(Int) -> UIEdgeInsets) -> Self {
+    public func setInsetForSectionAtIndex(_ insetForSectionAtIndex: @escaping(_ section: Int) -> UIEdgeInsets) -> Self {
         self.columnLayoutDelegate.insetForSectionAtIndex = insetForSectionAtIndex
         return self
     }
@@ -86,8 +92,14 @@ public class LBCGridView: UICollectionView {
     }
     
     @discardableResult
-    public func registerCells(_ cells: UICollectionViewCell.Type...) -> Self {
+    public func registerCells(_ cells: [UICollectionViewCell.Type]) -> Self {
         cells.forEach{ register(cellType: $0) }
+        return self
+    }
+    
+    @discardableResult
+    public func didSelectItemAtIndexPath(_ didSelectItemAtIndexPath: @escaping(UICollectionView, IndexPath) -> Void) -> Self {
+        _delegate.didSelectItemAtIndexPath = didSelectItemAtIndexPath
         return self
     }
 }

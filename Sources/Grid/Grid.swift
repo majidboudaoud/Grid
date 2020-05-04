@@ -22,10 +22,10 @@ public class LBCGridView: UICollectionView {
     
     private override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: self.columnLayout)
+        registerSupplementaryViews(UICollectionReusableView.self)
         self.columnLayout.delegate = columnLayoutDelegate
         self.dataSource = _dataSource
         self.delegate = _delegate
-        self.alwaysBounceVertical = true
     }
     
     required init?(coder: NSCoder) {
@@ -34,7 +34,18 @@ public class LBCGridView: UICollectionView {
         self.columnLayout.delegate = self.columnLayoutDelegate
         self.dataSource = _dataSource
         self.delegate = _delegate
-        self.alwaysBounceVertical = true
+    }
+    
+    @discardableResult
+    public func setPagingEnabled(_ isPagingEnabled: Bool) -> Self {
+        self.isPagingEnabled = isPagingEnabled
+        return self
+    }
+    
+    @discardableResult
+    public func addLayoutEffects(_ effectList: [CLLayoutEffectDelegate.Type]) -> Self {
+        self.columnLayout.effects = effectList
+        return self
     }
     
     @discardableResult
@@ -46,6 +57,12 @@ public class LBCGridView: UICollectionView {
     @discardableResult
     public func setHeightForCellAt(_ heightForCellAtIndex: @escaping(IndexPath) -> CGFloat) -> Self {
         self.columnLayoutDelegate.heightForCellAt = heightForCellAtIndex
+        return self
+    }
+    
+    @discardableResult
+    public func setWidthForCellAt(_ widthForCellAtIndex: @escaping(IndexPath) -> CGFloat) -> Self {
+        self.columnLayoutDelegate.widthForCellAt = widthForCellAtIndex
         return self
     }
     
@@ -62,7 +79,7 @@ public class LBCGridView: UICollectionView {
     }
     
     @discardableResult
-    public func setInsetForSectionAtIndex(_ minimumLineSpacingForSection: @escaping(Int) -> CGFloat) -> Self {
+    public func setLineSpacingForSection(_ minimumLineSpacingForSection: @escaping(Int) -> CGFloat) -> Self {
         self.columnLayoutDelegate.minimumLineSpacingForSection = minimumLineSpacingForSection
         return self
     }
@@ -74,8 +91,20 @@ public class LBCGridView: UICollectionView {
     }
     
     @discardableResult
+    public func setReferenceWidthForHeaderInSection(_ referenceWidthForHeaderInSection: @escaping(Int) -> CGFloat) -> Self {
+        self.columnLayoutDelegate.referenceWidthForHeaderInSection = referenceWidthForHeaderInSection
+        return self
+    }
+    
+    @discardableResult
     public func cellForItemAtIndexPath(_ cellForItemAtIndexPath: @escaping(UICollectionView, IndexPath) -> UICollectionViewCell) -> Self {
         _dataSource.cellForItemAtIndexPath = cellForItemAtIndexPath
+        return self
+    }
+    
+    @discardableResult
+    public func setSupplementaryView(_ toto: @escaping(UICollectionView, String, IndexPath) -> UICollectionReusableView) -> Self {
+        _dataSource.toto = toto
         return self
     }
     
@@ -97,15 +126,21 @@ public class LBCGridView: UICollectionView {
         return self
     }
     
-    @inlinable
     @discardableResult
-    public func testInlinable(_ didSelectItemAtIndexPath: @escaping(UICollectionView, IndexPath) -> Void) -> Self {
+    public func registerSupplementaryViews(_ supplementaryViews: UICollectionReusableView.Type) -> Self {
+        self.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        return self
+    }
+
+    @discardableResult
+    public func didSelectItemAtIndexPath(_ didSelectItemAtIndexPath: @escaping(UICollectionView, IndexPath) -> Void) -> Self {
+        _delegate.didSelectItemAtIndexPath = didSelectItemAtIndexPath
         return self
     }
     
     @discardableResult
-    public func didSelectItemAtIndexPath(_ didSelectItemAtIndexPath: @escaping(UICollectionView, IndexPath) -> Void) -> Self {
-        _delegate.didSelectItemAtIndexPath = didSelectItemAtIndexPath
+    public func setScrollDirection(_ scrollDirection: CLScrollDirection) -> Self {
+        self.columnLayout.scrollDirection = scrollDirection
         return self
     }
 }

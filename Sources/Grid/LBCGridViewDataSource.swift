@@ -11,7 +11,8 @@ class LBCGridViewDataSource: NSObject, UICollectionViewDataSource {
     
     var numberOfItemsInSection: ((Int) -> Int)? = nil
     var cellForItemAtIndexPath: ((UICollectionView, IndexPath) -> UICollectionViewCell)? = nil
-    var numberOfSections: Int = 0
+    var toto: ((UICollectionView, String, IndexPath) -> UICollectionReusableView)? = nil
+    var numberOfSections: Int = 1
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         numberOfItemsInSection?(section) ?? 0

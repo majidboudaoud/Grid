@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C1E5F8E245F015000F2306A /* SpringBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E5F8D245F015000F2306A /* SpringBoardViewController.swift */; };
 		3C869775244B1EBB0040016D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C869774244B1EBB0040016D /* AppDelegate.swift */; };
-		3C869777244B1EBB0040016D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C869776244B1EBB0040016D /* SceneDelegate.swift */; };
 		3C869779244B1EBB0040016D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C869778244B1EBB0040016D /* ViewController.swift */; };
-		3C86977C244B1EBB0040016D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C86977A244B1EBB0040016D /* Main.storyboard */; };
 		3C86977E244B1EBC0040016D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C86977D244B1EBC0040016D /* Assets.xcassets */; };
 		3C869781244B1EBC0040016D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C86977F244B1EBC0040016D /* LaunchScreen.storyboard */; };
 		3C8697A9244B202D0040016D /* IndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8697A6244B202D0040016D /* IndexPath+Extensions.swift */; };
@@ -20,17 +19,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C1E5F8D245F015000F2306A /* SpringBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringBoardViewController.swift; sourceTree = "<group>"; };
 		3C869771244B1EBB0040016D /* GridExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C869774244B1EBB0040016D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3C869776244B1EBB0040016D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3C869778244B1EBB0040016D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3C86977B244B1EBB0040016D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C86977D244B1EBC0040016D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C869780244B1EBC0040016D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C869782244B1EBC0040016D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C8697A6244B202D0040016D /* IndexPath+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IndexPath+Extensions.swift"; sourceTree = "<group>"; };
 		3C8697A7244B202D0040016D /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		3C8697A8244B202D0040016D /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		3C95D0F7244E1CAB00C8911B /* GridExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GridExample.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +64,11 @@
 		3C869773244B1EBB0040016D /* GridExample */ = {
 			isa = PBXGroup;
 			children = (
+				3C95D0F7244E1CAB00C8911B /* GridExample.entitlements */,
 				3C8697A5244B202D0040016D /* Extensions */,
 				3C869774244B1EBB0040016D /* AppDelegate.swift */,
-				3C869776244B1EBB0040016D /* SceneDelegate.swift */,
 				3C869778244B1EBB0040016D /* ViewController.swift */,
-				3C86977A244B1EBB0040016D /* Main.storyboard */,
+				3C1E5F8D245F015000F2306A /* SpringBoardViewController.swift */,
 				3C86977D244B1EBC0040016D /* Assets.xcassets */,
 				3C86977F244B1EBC0040016D /* LaunchScreen.storyboard */,
 				3C869782244B1EBC0040016D /* Info.plist */,
@@ -157,7 +156,6 @@
 			files = (
 				3C869781244B1EBC0040016D /* LaunchScreen.storyboard in Resources */,
 				3C86977E244B1EBC0040016D /* Assets.xcassets in Resources */,
-				3C86977C244B1EBB0040016D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,24 +168,16 @@
 			files = (
 				3C869779244B1EBB0040016D /* ViewController.swift in Sources */,
 				3C8697A9244B202D0040016D /* IndexPath+Extensions.swift in Sources */,
+				3C1E5F8E245F015000F2306A /* SpringBoardViewController.swift in Sources */,
 				3C8697AB244B202D0040016D /* UICollectionView+Extensions.swift in Sources */,
 				3C8697AA244B202D0040016D /* NSObject.swift in Sources */,
 				3C869775244B1EBB0040016D /* AppDelegate.swift in Sources */,
-				3C869777244B1EBB0040016D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3C86977A244B1EBB0040016D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C86977B244B1EBB0040016D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3C86977F244B1EBC0040016D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -317,15 +307,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GridExample/GridExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2VUA56FA2C;
 				INFOPLIST_FILE = GridExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = majidboudaoud.GridExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -335,15 +328,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GridExample/GridExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2VUA56FA2C;
 				INFOPLIST_FILE = GridExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = majidboudaoud.GridExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

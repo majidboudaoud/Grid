@@ -12,10 +12,12 @@ class LBCGridViewColumnLayoutDelegate: ColumnLayoutDelegate {
     
     var insetForSectionAtIndex: ((Int) -> UIEdgeInsets)? = nil
     var heightForCellAt: ((IndexPath) -> CGFloat)? = nil
+    var widthForCellAt: ((IndexPath) -> CGFloat)? = nil
     var numberOfColumnsFor: ((Int) -> Int)? = nil
     var minimumInteritemSpacingForSection: ((Int) -> CGFloat)? = nil
     var minimumLineSpacingForSection: ((Int) -> CGFloat)? = nil
     var referenceHeightForHeaderInSection: ((Int) -> CGFloat)? = nil
+    var referenceWidthForHeaderInSection: ((Int) -> CGFloat)? = nil
     
     func insetForSectionAtIndex(section: Int) -> UIEdgeInsets {
         insetForSectionAtIndex?(section) ?? .zero
@@ -23,6 +25,10 @@ class LBCGridViewColumnLayoutDelegate: ColumnLayoutDelegate {
     
     func heightForCellAt(indexPath: IndexPath) -> CGFloat {
         heightForCellAt?(indexPath) ?? 80
+    }
+    
+    func widthForCellAt(indexPath: IndexPath) -> CGFloat {
+        widthForCellAt?(indexPath) ?? 80
     }
     
     func numberOfColumnsFor(section: Int) -> Int {
@@ -39,5 +45,9 @@ class LBCGridViewColumnLayoutDelegate: ColumnLayoutDelegate {
     
     func referenceHeightForHeaderInSection(section: Int) -> CGFloat {
         referenceHeightForHeaderInSection?(section) ?? 0
+    }
+    
+    func referenceWidthForHeaderInSection(section: Int) -> CGFloat {
+        referenceWidthForHeaderInSection?(section) ?? 0
     }
 }

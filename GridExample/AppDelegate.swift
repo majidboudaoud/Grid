@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupWindow() {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let homeViewController = ViewController()
+        let homeViewController = SpringBoardViewController()
         window.rootViewController = homeViewController
         window.makeKeyAndVisible()
         self.window = window

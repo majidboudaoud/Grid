@@ -103,8 +103,8 @@ public class LBCGridView: UICollectionView {
     }
     
     @discardableResult
-    public func setSupplementaryView(_ toto: @escaping(UICollectionView, String, IndexPath) -> UICollectionReusableView) -> Self {
-        _dataSource.toto = toto
+    public func setSupplementaryView(_ viewForSupplementaryElementOfKind: @escaping(UICollectionView, String, IndexPath) -> UICollectionReusableView) -> Self {
+        _dataSource.viewForSupplementaryElementOfKind = viewForSupplementaryElementOfKind
         return self
     }
     
@@ -128,7 +128,7 @@ public class LBCGridView: UICollectionView {
     
     @discardableResult
     public func registerSupplementaryViews(_ supplementaryViews: UICollectionReusableView.Type) -> Self {
-        self.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        registerHeaderReusableView(cellType: supplementaryViews)
         return self
     }
 

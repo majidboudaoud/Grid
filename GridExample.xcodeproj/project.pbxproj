@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C1E5F8E245F015000F2306A /* SpringBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1E5F8D245F015000F2306A /* SpringBoardViewController.swift */; };
+		3C2535322485067D0017088C /* Grid in Frameworks */ = {isa = PBXBuildFile; productRef = 3C2535312485067D0017088C /* Grid */; };
 		3C869775244B1EBB0040016D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C869774244B1EBB0040016D /* AppDelegate.swift */; };
 		3C869779244B1EBB0040016D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C869778244B1EBB0040016D /* ViewController.swift */; };
 		3C86977E244B1EBC0040016D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C86977D244B1EBC0040016D /* Assets.xcassets */; };
@@ -15,7 +16,6 @@
 		3C8697A9244B202D0040016D /* IndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8697A6244B202D0040016D /* IndexPath+Extensions.swift */; };
 		3C8697AA244B202D0040016D /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8697A7244B202D0040016D /* NSObject.swift */; };
 		3C8697AB244B202D0040016D /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8697A8244B202D0040016D /* UICollectionView+Extensions.swift */; };
-		3C8697AE244B209A0040016D /* Grid in Frameworks */ = {isa = PBXBuildFile; productRef = 3C8697AD244B209A0040016D /* Grid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C8697AE244B209A0040016D /* Grid in Frameworks */,
+				3C2535322485067D0017088C /* Grid in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +110,7 @@
 			);
 			name = GridExample;
 			packageProductDependencies = (
-				3C8697AD244B209A0040016D /* Grid */,
+				3C2535312485067D0017088C /* Grid */,
 			);
 			productName = GridExample;
 			productReference = 3C869771244B1EBB0040016D /* GridExample.app */;
@@ -369,7 +369,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3C8697AD244B209A0040016D /* Grid */ = {
+		3C2535312485067D0017088C /* Grid */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Grid;
 		};

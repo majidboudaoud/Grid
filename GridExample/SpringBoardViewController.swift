@@ -204,7 +204,12 @@ class WidgetListCollectionViewCell: UICollectionViewCell {
         .setReferenceHeightForHeaderInSection { _ in 60 }
         .setInsetForSectionAtIndex { _ in UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8) }
         .registerCells([WidgetCollectionViewCell.self])
+        .registerSupplementaryViews(SearchBarCollectionViewCell.self)
         .setNumberOfColumnsFor { _ in return 1 }
+        .setSupplementaryView({ (collectionView, kind, indexPath) -> UICollectionReusableView in
+            let header = collectionView.dequeueReusableSupplementaryView(with: SearchBarCollectionViewCell.self, kind: kind, for: indexPath)
+            return header
+        })
         .cellForItemAtIndexPath { (collectionView, indexPath) -> UICollectionViewCell in
             let cell = collectionView.dequeueReusableCell(with: WidgetCollectionViewCell.self, for: indexPath)
             cell.configure(image: UIImage(named: "\(indexPath.item)"))
@@ -253,7 +258,6 @@ class SpringBoardViewController: UIViewController {
         .setPagingEnabled(true)
         .setMinimumInteritemSpacingForSection { _ in 0 }
         .setWidthForCellAt { _ in UIScreen.main.bounds.width }
-        .setInsetForSectionAtIndex { _ in .zero }
         .registerCells([WidgetListCollectionViewCell.self, AppListCollectionViewCell.self])
         .setNumberOfColumnsFor { _ in return 1 }
         .cellForItemAtIndexPath { (collectionView, indexPath) -> UICollectionViewCell in

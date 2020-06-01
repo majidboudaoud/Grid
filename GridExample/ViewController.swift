@@ -71,6 +71,7 @@ class ViewController: UIViewController {
     }
 
     private func setupView() {
+        gridView.alwaysBounceVertical = true
         gridView.backgroundColor = .blue
         gridView.frame = self.view.frame
         gridView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

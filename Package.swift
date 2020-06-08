@@ -15,7 +15,7 @@ let package = Package(
             targets: ["Grid"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/majidboudaoud/ColumnLayout.git", from: "1.0.0"),
+        .package(url: "https://github.com/majidboudaoud/ColumnLayout.git", from: "1.0.1-alpha1"),
     ],
     targets: [
         .target(
